@@ -7,6 +7,9 @@ from time import sleep
 import anticaptcha
 import resolvebase64
 import json
+from datetime import datetime
+import os
+import glob
 
 #--------------json----------------
 with open('json\contabilista.json', 'r') as file:
@@ -163,3 +166,36 @@ try:
 except Exception as e:
     print('Erro ao tentar acessar a consulta de NFe')
     print(e)
+    import pandas as pd
+
+
+agora = datetime.now()
+mes = agora.month
+ano = agora.year
+
+grupo = 16
+filial = 1008053
+
+# Caminho da sua pasta
+pasta_xls = r"C:\Users\rafael.r.santos\Desktop\teste_XLS\XLS"
+pasta_csv = (r'C:\Users\rafael.r.santos\Desktop\teste_XLS\CSV')
+
+# Busca todos os arquivos .XLS na pasta
+arquivos_xls = glob.glob(os.path.join(pasta_xls, '*.xls'))
+
+for arquivo_xls in arquivos_xls:
+    nome_arquivo = os.path.basename(arquivo_xls)
+    
+    # Ler o arquivo .xls usando o caminho completo
+    df = pd.read_excel(arquivo_xls)
+    
+    # Criar nome para o CSV com dados da variável e nome do arquivo original (opcional)
+    arquivo_csv = (f"NFe{grupo}_{filial}_{mes}{ano}.csv")
+    
+
+    caminho_csv = os.path.join(pasta_csv, arquivo_csv)
+    
+    # Salvar como .csv
+    df.to_csv(caminho_csv, index=False)
+    
+    print(f"Arquivo convertido e salvo como {arquivo_csv}")
