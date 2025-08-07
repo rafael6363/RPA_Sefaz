@@ -19,7 +19,24 @@ senhaContabilista = dados["senha_contabilista"]
 
 
 
-def mainNfe():
+
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("prefs", {
+"download.default_directory": "document/xls/",
+#
+"download.prompt_for_download": False,
+"download.directory_upgrade": True,
+"safebrowsing.enabled": True
+})
+#options.add_argument('--headless')
+options.add_argument('--no-sandbox')
+options.add_argument('--mute-audio')
+driver = webdriver.Chrome(options=options)
+url = "https://www.sefaz.mt.gov.br/acesso/pages/login/login.xhtml"
+driver.implicitly_wait(2)
+driver.get(url)
+
 
 
 try:
