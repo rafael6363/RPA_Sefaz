@@ -11,6 +11,7 @@ from datetime import datetime
 import os
 import glob
 
+#pega as informacoes que estao na 
 #--------------json----------------
 with open('json\contabilista.json', 'r') as file:
     dados = json.load(file)
@@ -19,16 +20,10 @@ userContabilista = dados["contabilista"]
 senhaContabilista = dados["senha_contabilista"]
 
 
-options = webdriver.ChromeOptions()
-driver = webdriver.Chrome(options=options)
 
-url = "https://www.sefaz.mt.gov.br/acesso/pages/login/login.xhtml"
- 
-driver.get(url)
-sleep(1)
 
 def mainNfe():
-    
+
 
 try:
     tipoUsuario = WebDriverWait(driver, 10).until(

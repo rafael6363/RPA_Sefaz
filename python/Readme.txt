@@ -1,13 +1,14 @@
 No main:
 -criar pastas dentro das pasta document/
-
----SPED_fiscal
+    C:
     |
-    ---Consulta de NF-e Emitida/Recebida
+    ---SPED_fiscal
         |
-        ---Mes_01
-        |
-        ---Mes_02
+        ---Consulta de NF-e Emitida/Recebida
+            |
+            ---Mes_01
+            |
+            ---Mes_02
 
 DIVIDIR O RPA EM DUAS EXECUCOES:
     -nfe
