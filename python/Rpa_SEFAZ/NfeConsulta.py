@@ -29,7 +29,7 @@ sleep(1)
 
 def mainNfe():
     
-
+    pass
 try:
     tipoUsuario = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.ID, 'formLogin:selectTipoUsuario_label')))
@@ -177,8 +177,8 @@ grupo = 16
 filial = 1008053
 
 # Caminho da sua pasta
-pasta_xls = r"C:\Users\rafael.r.santos\Desktop\teste_XLS\XLS"
-pasta_csv = (r'C:\Users\rafael.r.santos\Desktop\teste_XLS\CSV')
+pasta_xls = r"C:\RPA_Sefaz\python\document\XLS"
+pasta_csv = r'C:\RPA_Sefaz\python\document\CSV'
 
 # Busca todos os arquivos .XLS na pasta
 arquivos_xls = glob.glob(os.path.join(pasta_xls, '*.xls'))
